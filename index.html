@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Defender - Faction Assessment</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="game-container">
+        <header>
+            <div class="header-banner">
+                <span class="banner-title">[ CYBER DEFENDER - FACTION ASSESSMENT ]</span>
+            </div>
+        </header>
+
+        <section id="pre-start-screen" class="screen active">
+            <div class="intro-card hacker-theme"> 
+                <h2 class="glitch" data-text=" WARNING !! "> WARNING !! </h2>
+                <div class="code-box pre-start-message">
+                    <div class="hacker-icon">&#128373;</div> 
+                    <p class="hacker-text glitch-small" data-text=">> ATTENTION: You clicked an unverified link.">>> ATTENTION: You clicked an unverified link, I could have phished your credentials, Trust nothing. Verify everything. </p>
+                    
+                    <p class="hacker-text" id="auto-transition-timer" style="margin-top: 20px; text-align: center; font-weight: 700; color: #ffcc00;"></p>
+                </div>
+                <p class="subtitle" style="color: #ffcc00; margin-top: 20px; font-weight: 700;">I will now force you into a security assessment. Learn from this experience and prevent future vulnerabilities.</p>
+            </div>
+        </section>
+
+        <section id="start-screen" class="screen">
+            <div class="intro-card">
+                <h2> ACCESS PROTOCOL INITIATED </h2>
+                <p class="subtitle">Welcome, Agent. Your mission is to face 5 challenges based on the core pillars of cybersecurity. Your choices will determine your optimal Faction: **RED, BLUE, or GRC.**</p>
+                <div class="code-box">
+                    <p>STATUS: AWAITING DEPLOYMENT COMMAND</p>
+                </div>
+                <button class="action-button primary-button" onclick="startFlow()">START CYBER DEFENSE</button>
+            </div>
+        </section>
+
+
+        <section id="level-select-screen" class="screen">
+            <h2> SELECT DEPLOYMENT LEVEL </h2>
+            <p class="subtitle">Choose your challenge complexity.</p>
+            
+            <div class="level-card" data-level="Trainee">
+                <h3>TRAINEE [LVL 1]-ANALYST</h3>
+                <p>Simple Triage, basic code weaknesses, policy risk rating.</p>
+                <button onclick="startMission('Trainee')">DEPLOY</button>
+            </div>
+
+            <div class="level-card" data-level="Specialist">
+                <h3>SPECIALIST [LVL 2]-OPERATIVE</h3>
+                <p>Advanced analysis, complex exploitation, compliance gap analysis.</p>
+                <button onclick="startMission('Specialist')">DEPLOY</button>
+            </div>
+
+            <div class="level-card" data-level="Elite">
+                <h3>ELITE [LVL 3]-ARCHITECT</h3>
+                <p>Zero-trust design, exploit chaining, C2 identification.</p>
+                <button onclick="startMission('Elite')">DEPLOY</button>
+            </div>
+        </section>
+
+        <section id="game-screen" class="screen">
+            <div class="progress-bar-container">
+                <div id="progress-bar-fill"></div>
+            </div>
+            <div id="activity-container">
+                </div>
+            
+            <div id="options-container" class="options-grid"></div>
+
+            <div id="interactive-elements-container"></div> 
+            
+            <button id="next-button" class="action-button" onclick="nextActivity()" disabled>SUBMIT & ADVANCE</button>
+        </section>
+
+        <section id="results-screen" class="screen">
+            <h2 id="result-title"> MISSION COMPLETE </h2>
+            <div id="final-result-card" class="result-card">
+                <p>PROCESSING... ASSIGNED FACTION:</p>
+                <h1 id="assigned-team-title">... [Team Name] ...</h1>
+                <p id="team-description"></p>
+                
+                <div class="prize-section">
+                    <h3> ROADMAP ACCESS GRANTED </h3>
+                    <p>Your strategic reward: The Complete Cybersecurity Roadmap (File Access).</p>
+                    <button id="claim-prize-button" class="action-button primary-button" onclick="claimPrize()">ACCESS ROADMAP</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
